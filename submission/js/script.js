@@ -75,3 +75,16 @@ contactForm.addEventListener("submit", (event) => {
     formFeedback.style.color = "green";
     contactForm.reset();
 });
+
+// Feature 4: Persistent state with localStorage
+const themeToggle = document.getElementById("theme-toggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+});
