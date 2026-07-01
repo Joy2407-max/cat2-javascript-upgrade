@@ -381,3 +381,15 @@ body.dark-mode .goal-box {
     background-color: #1e1e1e;
     color: #e0e0e0;
 }
+
+.banner-caption {
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+#banner-container.revealed .banner-caption {
+    display: block;
+}

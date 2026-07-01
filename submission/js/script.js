@@ -88,3 +88,10 @@ themeToggle.addEventListener("click", () => {
     const isDark = document.body.classList.contains("dark-mode");
     localStorage.setItem("theme", isDark ? "dark" : "light");
 });
+
+// Feature 5: Click-to-reveal on banner
+const bannerContainer = document.getElementById("banner-container");
+
+bannerContainer.addEventListener("click", () => {
+    bannerContainer.classList.toggle("revealed");
+});
