@@ -53,3 +53,25 @@ addActivityBtn.addEventListener("click", () => {
 
     newActivityInput.value = "";
 });
+
+// Feature 3: Form handling with validation feedback
+const contactForm = document.getElementById("contact-form");
+const formFeedback = document.getElementById("form-feedback");
+
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
+
+    if (name === "" || !email.includes("@") || message === "") {
+        formFeedback.textContent = "Please fill in your name, a valid email, and a message.";
+        formFeedback.style.color = "red";
+        return;
+    }
+
+    formFeedback.textContent = `Thanks, ${name}! Your message has been received. Brian will get back to you at ${email}.`;
+    formFeedback.style.color = "green";
+    contactForm.reset();
+});
