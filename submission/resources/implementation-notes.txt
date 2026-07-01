@@ -1,0 +1,37 @@
+Implementation Notes — Brian's Community Portfolio (CAT 2)
+
+1. Loop-rendered dynamic content:
+   The three activity cards (Volunteering, Youth Mentorship, Community
+   Events) are stored as an array of objects in script.js, each with a
+   name and description. A forEach() loop creates the HTML elements
+   dynamically and appends them into the #activity-grid container,
+   instead of being hardcoded in the HTML.
+
+2. Dynamically add & remove elements:
+   Visitors can type a suggestion into the input box above the
+   activities grid and click "Add Activity" to create a new card using
+   createElement() and appendChild(). Each new card includes its own
+   Remove button, which deletes that specific card using .remove()
+   when clicked.
+
+3. Form handling with validation feedback:
+   The contact form's submit event is intercepted with
+   event.preventDefault() so the page doesn't reload. The script checks
+   that the name and message aren't empty and that the email contains
+   an "@" symbol. If validation fails, a red error message is written
+   into the page. If it passes, a personalized green thank-you message
+   appears and the form resets.
+
+4. Persistent state with localStorage:
+   A dark mode toggle button switches a "dark-mode" class on the body
+   element. The chosen theme ("dark" or "light") is saved to
+   localStorage, and on every page load, the script checks localStorage
+   and reapplies dark mode automatically if it was previously selected
+   — so the choice survives a page reload.
+
+5. Click-to-reveal on banner:
+   Clicking the banner image toggles a "revealed" class on its
+   container. A caption, hidden by default via CSS, becomes visible
+   only when that class is present — using the same classList.toggle()
+   pattern taught in class for the "Toggling Classes" exercise.
+   
