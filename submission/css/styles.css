@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0c2340;   /* Deep Navy Blue */
+    --secondary-color: #1d70b8; /* Royal Blue */
+    --accent-color: #008080;    /* Teal Green */
+    --light-bg: #f8fafc;        /* Cool White/Grey background */
+    --card-bg: #ffffff;         /* Pure White for cards */
+    --dark-text: #1e293b;       /* Slate Charcoal */
+    --muted-text: #64748b;      /* Slate Gray text */
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base measurement for relative rem values */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header .logo h1 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+header .logo p {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.main-banner-container {
+    width: 100%;
+    height: 35vh;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.site-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 5rem 5%;
+    background-color: var(--white);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--muted-text);
+    margin-bottom: 2rem;
+    max-width: 550px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.8rem 2.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(29, 112, 184, 0.2);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 5%;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-text h2, .activities h2, .gallery h2, .goals h2, .contact h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--muted-text);
+    margin-bottom: 1.2rem;
+}
+
+.activities {
+    padding: 5rem 5%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    background-color: var(--light-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: left;
+    border-top: 4px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+}
+
+.gallery {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+.goals {
+    padding: 5rem 5%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.goals-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.goal-box {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-color);
+    text-align: left;
+}
+
+.goal-box h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+}
+
+.goal-box p {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+}
+
+.contact {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.contact p {
+    color: var(--muted-text);
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: var(--white);
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--secondary-color);
+}
+
+.contact-form button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 0.8rem;
+    }
+
+    .hero, .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+    
+    .hero-content p {
+        margin: 0 auto 2rem auto;
+    }
+
+    .activity-grid, .gallery-grid, .goals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+}
